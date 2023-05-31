@@ -858,3 +858,43 @@
 05/31/2023 03:03:46 PM: INFO: ******** test_searchCustomerByName Completed **********
 05/31/2023 03:03:46 PM: INFO: ******** test_searchCustomerByName Completed **********
 05/31/2023 03:03:46 PM: INFO: ******** test_searchCustomerByName Completed **********
+05/31/2023 03:11:14 PM: INFO: Applicable driver not found; attempting to install with Selenium Manager (Beta)
+05/31/2023 03:11:17 PM: INFO: ********Test_001_Login**********
+05/31/2023 03:11:17 PM: INFO: ********test_homePageTitle**********
+05/31/2023 03:11:18 PM: INFO: ********test_homePageTitle Passed**********
+05/31/2023 03:11:19 PM: INFO: Applicable driver not found; attempting to install with Selenium Manager (Beta)
+05/31/2023 03:11:20 PM: INFO: ********Test_001_Login**********
+05/31/2023 03:11:20 PM: INFO: ********test_login**********
+05/31/2023 03:11:25 PM: INFO: ********test_login Passed**********
+05/31/2023 03:30:55 PM: INFO: Applicable driver not found; attempting to install with Selenium Manager (Beta)
+05/31/2023 03:30:57 PM: INFO: ********Test_001_Login**********
+05/31/2023 03:30:57 PM: INFO: ********test_homePageTitle**********
+05/31/2023 03:30:59 PM: INFO: ********test_homePageTitle Passed**********
+05/31/2023 03:30:59 PM: INFO: Applicable driver not found; attempting to install with Selenium Manager (Beta)
+05/31/2023 03:31:01 PM: INFO: ********Test_001_Login**********
+05/31/2023 03:31:01 PM: INFO: ********test_login**********
+05/31/2023 03:31:05 PM: INFO: ********test_login Passed**********
+05/31/2023 03:31:43 PM: INFO: Applicable driver not found; attempting to install with Selenium Manager (Beta)
+05/31/2023 03:31:45 PM: INFO: ********Test_001_Login**********
+05/31/2023 03:31:45 PM: INFO: ********test_homePageTitle**********
+05/31/2023 03:31:46 PM: INFO: ********test_homePageTitle Passed**********
+05/31/2023 03:31:46 PM: INFO: Applicable driver not found; attempting to install with Selenium Manager (Beta)
+05/31/2023 03:31:48 PM: INFO: ********Test_001_Login**********
+05/31/2023 03:31:48 PM: INFO: ********test_login**********
+05/31/2023 03:31:52 PM: ERROR: ********test_login Failed**********
+05/31/2023 03:34:09 PM: INFO: Applicable driver not found; attempting to install with Selenium Manager (Beta)
+05/31/2023 03:34:11 PM: INFO: ********Test_001_Login**********
+05/31/2023 03:34:11 PM: INFO: ********test_homePageTitle**********
+05/31/2023 03:34:13 PM: INFO: ********test_homePageTitle Passed**********
+05/31/2023 03:34:13 PM: INFO: Applicable driver not found; attempting to install with Selenium Manager (Beta)
+05/31/2023 03:34:15 PM: INFO: ********Test_001_Login**********
+05/31/2023 03:34:15 PM: INFO: ********test_login**********
+05/31/2023 03:34:21 PM: ERROR: ********test_login Failed**********
+05/31/2023 03:35:07 PM: INFO: Applicable driver not found; attempting to install with Selenium Manager (Beta)
+05/31/2023 03:35:09 PM: INFO: ********Test_001_Login**********
+05/31/2023 03:35:09 PM: INFO: ********test_homePageTitle**********
+05/31/2023 03:35:11 PM: INFO: ********test_homePageTitle Passed**********
+05/31/2023 03:35:11 PM: INFO: Applicable driver not found; attempting to install with Selenium Manager (Beta)
+05/31/2023 03:35:13 PM: INFO: ********Test_001_Login**********
+05/31/2023 03:35:13 PM: INFO: ********test_login**********
+05/31/2023 03:35:17 PM: INFO: ********test_login Passed**********

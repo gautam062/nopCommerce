@@ -2,8 +2,194 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title>reports.html</title>
-    <link href="assets/style.css" rel="stylesheet" type="text/css"/></head>
+    <title>Nop Commerce Automation Report</title>
+    <style>body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  /* do not increase min-width as some may use split screens */
+  min-width: 800px;
+  color: #999;
+}
+
+h1 {
+  font-size: 24px;
+  color: black;
+}
+
+h2 {
+  font-size: 16px;
+  color: black;
+}
+
+p {
+  color: black;
+}
+
+a {
+  color: #999;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/******************************
+ * SUMMARY INFORMATION
+ ******************************/
+#environment td {
+  padding: 5px;
+  border: 1px solid #E6E6E6;
+}
+#environment tr:nth-child(odd) {
+  background-color: #f6f6f6;
+}
+
+/******************************
+ * TEST RESULT COLORS
+ ******************************/
+span.passed,
+.passed .col-result {
+  color: green;
+}
+
+span.skipped,
+span.xfailed,
+span.rerun,
+.skipped .col-result,
+.xfailed .col-result,
+.rerun .col-result {
+  color: orange;
+}
+
+span.error,
+span.failed,
+span.xpassed,
+.error .col-result,
+.failed .col-result,
+.xpassed .col-result {
+  color: red;
+}
+
+/******************************
+ * RESULTS TABLE
+ *
+ * 1. Table Layout
+ * 2. Extra
+ * 3. Sorting items
+ *
+ ******************************/
+/*------------------
+ * 1. Table Layout
+ *------------------*/
+#results-table {
+  border: 1px solid #e6e6e6;
+  color: #999;
+  font-size: 12px;
+  width: 100%;
+}
+#results-table th,
+#results-table td {
+  padding: 5px;
+  border: 1px solid #E6E6E6;
+  text-align: left;
+}
+#results-table th {
+  font-weight: bold;
+}
+
+/*------------------
+ * 2. Extra
+ *------------------*/
+.log {
+  background-color: #e6e6e6;
+  border: 1px solid #e6e6e6;
+  color: black;
+  display: block;
+  font-family: "Courier New", Courier, monospace;
+  height: 230px;
+  overflow-y: scroll;
+  padding: 5px;
+  white-space: pre-wrap;
+}
+.log:only-child {
+  height: inherit;
+}
+
+div.image {
+  border: 1px solid #e6e6e6;
+  float: right;
+  height: 240px;
+  margin-left: 5px;
+  overflow: hidden;
+  width: 320px;
+}
+div.image img {
+  width: 320px;
+}
+
+div.video {
+  border: 1px solid #e6e6e6;
+  float: right;
+  height: 240px;
+  margin-left: 5px;
+  overflow: hidden;
+  width: 320px;
+}
+div.video video {
+  overflow: hidden;
+  width: 320px;
+  height: 240px;
+}
+
+.collapsed {
+  display: none;
+}
+
+.expander::after {
+  content: " (show details)";
+  color: #BBB;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.collapser::after {
+  content: " (hide details)";
+  color: #BBB;
+  font-style: italic;
+  cursor: pointer;
+}
+
+/*------------------
+ * 3. Sorting items
+ *------------------*/
+.sortable {
+  cursor: pointer;
+}
+
+.sort-icon {
+  font-size: 0px;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  /*triangle*/
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+.inactive .sort-icon {
+  /*finish triangle*/
+  border-top: 8px solid #E6E6E6;
+}
+.asc.active .sort-icon {
+  /*finish triangle*/
+  border-bottom: 8px solid #999;
+}
+.desc.active .sort-icon {
+  /*finish triangle*/
+  border-top: 8px solid #999;
+}
+</style></head>
   <body onLoad="init()">
     <script>/* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
@@ -252,11 +438,11 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
     notFoundMessage.hidden = !allRowsHidden;
 }
 </script>
-    <h1>reports.html</h1>
-    <p>Report generated on 31-May-2023 at 15:03:49 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <h1>Nop Commerce Automation Report</h1>
+    <p>Report generated on 31-May-2023 at 15:35:17 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Summary</h2>
-    <p>5 tests ran in 87.91 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">4 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>2 tests ran in 10.31 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">2 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -267,28 +453,15 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_searchCustomer.py::Test_004_SearchCustomer::test_searchCustomerByEmail</td>
-          <td class="col-duration">10.96</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;testCases.test_searchCustomer.Test_004_SearchCustomer object at 0x0000021FCD845590&gt;, setup = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;9846e703-e85b-49d1-bce6-045ebcbcc44e&quot;)&gt;<br/><br/>    @pytest.mark.regression<br/>    def test_searchCustomerByEmail(self, setup):<br/>        self.logger.info(&quot;********Test_004_SearchCustomer**********&quot;)<br/>        self.logger.info(&quot;********test_searchCustomerByEmail**********&quot;)<br/>        self.driver = setup<br/>        self.driver.get(self.baseURL)<br/>        self.driver.maximize_window()<br/>    <br/>        lp = LoginPage(self.driver)<br/>        lp.set_username(self.username)<br/>        lp.set_password(self.password)<br/>        lp.click_login_button()<br/>        self.logger.info(&quot;******** Login Successful **********&quot;)<br/>    <br/>        self.logger.info(&quot;******** Starting Search Customer by Email Test **********&quot;)<br/>        self.acp = AddCustomerPage(self.driver)<br/>        self.acp.clickOnCustomerMenu()<br/>&gt;       self.acp.clickOnCustomerMenuItem()<br/><br/>testCases\test_searchCustomer.py:36: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>pageObjects\AddCustomerPage.py:43: in clickOnCustomerMenuItem<br/>    self.driver.find_element(By.XPATH, self.link_Customers_menuitem_xpath).click()<br/>venv\Lib\site-packages\selenium\webdriver\remote\webelement.py:94: in click<br/>    self._execute(Command.CLICK_ELEMENT)<br/>venv\Lib\site-packages\selenium\webdriver\remote\webelement.py:403: in _execute<br/>    return self._parent.execute(command, params)<br/>venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py:440: in execute<br/>    self.error_handler.check_response(response)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x0000021FCC6120D0&gt;<br/>response = {&#x27;status&#x27;: 400, &#x27;value&#x27;: &#x27;{&quot;value&quot;:{&quot;error&quot;:&quot;element not interactable&quot;,&quot;message&quot;:&quot;Element &lt;a class=\\&quot;nav-link\\&quot; href...sys.mjs:214:29\\nreceiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:97:31\\n&quot;}}&#x27;}<br/><br/>    def check_response(self, response: Dict[str, Any]) -&gt; None:<br/>        &quot;&quot;&quot;Checks that a JSON response from the WebDriver does not have an<br/>        error.<br/>    <br/>        :Args:<br/>         - response - The JSON response from the WebDriver server as a dictionary<br/>           object.<br/>    <br/>        :Raises: If the response contains an error message.<br/>        &quot;&quot;&quot;<br/>        status = response.get(&quot;status&quot;, None)<br/>        if not status or status == ErrorCode.SUCCESS:<br/>            return<br/>        value = None<br/>        message = response.get(&quot;message&quot;, &quot;&quot;)<br/>        screen: str = response.get(&quot;screen&quot;, &quot;&quot;)<br/>        stacktrace = None<br/>        if isinstance(status, int):<br/>            value_json = response.get(&quot;value&quot;, None)<br/>            if value_json and isinstance(value_json, str):<br/>                import json<br/>    <br/>                try:<br/>                    value = json.loads(value_json)<br/>                    if len(value) == 1:<br/>                        value = value[&quot;value&quot;]<br/>                    status = value.get(&quot;error&quot;, None)<br/>                    if not status:<br/>                        status = value.get(&quot;status&quot;, ErrorCode.UNKNOWN_ERROR)<br/>                        message = value.get(&quot;value&quot;) or value.get(&quot;message&quot;)<br/>                        if not isinstance(message, str):<br/>                            value = message<br/>                            message = message.get(&quot;message&quot;)<br/>                    else:<br/>                        message = value.get(&quot;message&quot;, None)<br/>                except ValueError:<br/>                    pass<br/>    <br/>        exception_class: Type[WebDriverException]<br/>        if status in ErrorCode.NO_SUCH_ELEMENT:<br/>            exception_class = NoSuchElementException<br/>        elif status in ErrorCode.NO_SUCH_FRAME:<br/>            exception_class = NoSuchFrameException<br/>        elif status in ErrorCode.NO_SUCH_SHADOW_ROOT:<br/>            exception_class = NoSuchShadowRootException<br/>        elif status in ErrorCode.NO_SUCH_WINDOW:<br/>            exception_class = NoSuchWindowException<br/>        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:<br/>            exception_class = StaleElementReferenceException<br/>        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:<br/>            exception_class = ElementNotVisibleException<br/>        elif status in ErrorCode.INVALID_ELEMENT_STATE:<br/>            exception_class = InvalidElementStateException<br/>        elif (<br/>            status in ErrorCode.INVALID_SELECTOR<br/>            or status in ErrorCode.INVALID_XPATH_SELECTOR<br/>            or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER<br/>        ):<br/>            exception_class = InvalidSelectorException<br/>        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:<br/>            exception_class = ElementNotSelectableException<br/>        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:<br/>            exception_class = ElementNotInteractableException<br/>        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:<br/>            exception_class = InvalidCookieDomainException<br/>        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:<br/>            exception_class = UnableToSetCookieException<br/>        elif status in ErrorCode.TIMEOUT:<br/>            exception_class = TimeoutException<br/>        elif status in ErrorCode.SCRIPT_TIMEOUT:<br/>            exception_class = TimeoutException<br/>        elif status in ErrorCode.UNKNOWN_ERROR:<br/>            exception_class = WebDriverException<br/>        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:<br/>            exception_class = UnexpectedAlertPresentException<br/>        elif status in ErrorCode.NO_ALERT_OPEN:<br/>            exception_class = NoAlertPresentException<br/>        elif status in ErrorCode.IME_NOT_AVAILABLE:<br/>            exception_class = ImeNotAvailableException<br/>        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:<br/>            exception_class = ImeActivationFailedException<br/>        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:<br/>            exception_class = MoveTargetOutOfBoundsException<br/>        elif status in ErrorCode.JAVASCRIPT_ERROR:<br/>            exception_class = JavascriptException<br/>        elif status in ErrorCode.SESSION_NOT_CREATED:<br/>            exception_class = SessionNotCreatedException<br/>        elif status in ErrorCode.INVALID_ARGUMENT:<br/>            exception_class = InvalidArgumentException<br/>        elif status in ErrorCode.NO_SUCH_COOKIE:<br/>            exception_class = NoSuchCookieException<br/>        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:<br/>            exception_class = ScreenshotException<br/>        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:<br/>            exception_class = ElementClickInterceptedException<br/>        elif status in ErrorCode.INSECURE_CERTIFICATE:<br/>            exception_class = InsecureCertificateException<br/>        elif status in ErrorCode.INVALID_COORDINATES:<br/>            exception_class = InvalidCoordinatesException<br/>        elif status in ErrorCode.INVALID_SESSION_ID:<br/>            exception_class = InvalidSessionIdException<br/>        elif status in ErrorCode.UNKNOWN_METHOD:<br/>            exception_class = UnknownMethodException<br/>        else:<br/>            exception_class = WebDriverException<br/>        if not value:<br/>            value = response[&quot;value&quot;]<br/>        if isinstance(value, str):<br/>            raise exception_class(value)<br/>        if message == &quot;&quot; and &quot;message&quot; in value:<br/>            message = value[&quot;message&quot;]<br/>    <br/>        screen = None  # type: ignore[assignment]<br/>        if &quot;screen&quot; in value:<br/>            screen = value[&quot;screen&quot;]<br/>    <br/>        stacktrace = None<br/>        st_value = value.get(&quot;stackTrace&quot;) or value.get(&quot;stacktrace&quot;)<br/>        if st_value:<br/>            if isinstance(st_value, str):<br/>                stacktrace = st_value.split(&quot;\n&quot;)<br/>            else:<br/>                stacktrace = []<br/>                try:<br/>                    for frame in st_value:<br/>                        line = frame.get(&quot;lineNumber&quot;, &quot;&quot;)<br/>                        file = frame.get(&quot;fileName&quot;, &quot;&lt;anonymous&gt;&quot;)<br/>                        if line:<br/>                            file = f&quot;{file}:{line}&quot;<br/>                        meth = frame.get(&quot;methodName&quot;, &quot;&lt;anonymous&gt;&quot;)<br/>                        if &quot;className&quot; in frame:<br/>                            meth = f&quot;{frame[&#x27;className&#x27;]}.{meth}&quot;<br/>                        msg = &quot;    at %s (%s)&quot;<br/>                        msg = msg % (meth, file)<br/>                        stacktrace.append(msg)<br/>                except TypeError:<br/>                    pass<br/>        if exception_class == UnexpectedAlertPresentException:<br/>            alert_text = None<br/>            if &quot;data&quot; in value:<br/>                alert_text = value[&quot;data&quot;].get(&quot;text&quot;)<br/>            elif &quot;alert&quot; in value:<br/>                alert_text = value[&quot;alert&quot;].get(&quot;text&quot;)<br/>            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here<br/>&gt;       raise exception_class(message, screen, stacktrace)<br/><span class="error">E       selenium.common.exceptions.ElementNotInteractableException: Message: Element &lt;a class=&quot;nav-link&quot; href=&quot;/Admin/Customer/List&quot;&gt; could not be scrolled into view</span><br/><span class="error">E       Stacktrace:</span><br/><span class="error">E       RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8</span><br/><span class="error">E       WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5</span><br/><span class="error">E       ElementNotInteractableError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:293:5</span><br/><span class="error">E       webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:150:11</span><br/><span class="error">E       interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:119:11</span><br/><span class="error">E       clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:214:29</span><br/><span class="error">E       receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:97:31</span><br/><br/>venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py:245: ElementNotInteractableException<br/> -----------------------------Captured stdout setup------------------------------ <br/>*******Launching Firefox*********
-<br/> -------------------------------Captured log setup------------------------------- <br/>INFO     selenium.webdriver.common.selenium_manager:selenium_manager.py:73 Applicable driver not found; attempting to install with Selenium Manager (Beta)<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_searchCustomer.py:21 ********Test_004_SearchCustomer**********
-INFO     root:test_searchCustomer.py:22 ********test_searchCustomerByEmail**********
-INFO     root:test_searchCustomer.py:31 ******** Login Successful **********
-INFO     root:test_searchCustomer.py:33 ******** Starting Search Customer by Email Test **********<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_login.py::Test_001_Login::test_homePageTitle</td>
-          <td class="col-duration">9.21</td>
+          <td class="col-duration">4.05</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>*******Launching Firefox*********
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>*******Launching Chrome*********
 <br/> -------------------------------Captured log setup------------------------------- <br/>INFO     selenium.webdriver.common.selenium_manager:selenium_manager.py:73 Applicable driver not found; attempting to install with Selenium Manager (Beta)<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_login.py:16 ********Test_001_Login**********
 INFO     root:test_login.py:17 ********test_homePageTitle**********
 INFO     root:test_login.py:23 ********test_homePageTitle Passed**********<br/></div></td></tr></tbody>
@@ -296,46 +469,11 @@ INFO     root:test_login.py:23 ********test_homePageTitle Passed**********<br/><
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_login.py::Test_001_Login::test_login</td>
-          <td class="col-duration">11.53</td>
+          <td class="col-duration">6.20</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>*******Launching Firefox*********
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>*******Launching Chrome*********
 <br/> -------------------------------Captured log setup------------------------------- <br/>INFO     selenium.webdriver.common.selenium_manager:selenium_manager.py:73 Applicable driver not found; attempting to install with Selenium Manager (Beta)<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_login.py:34 ********Test_001_Login**********
 INFO     root:test_login.py:35 ********test_login**********
-INFO     root:test_login.py:45 ********test_login Passed**********<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_login_ddt.py::Test_002_DDT_Login::test_login_ddt</td>
-          <td class="col-duration">33.98</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>*******Launching Firefox*********
-<br/> -------------------------------Captured log setup------------------------------- <br/>INFO     selenium.webdriver.common.selenium_manager:selenium_manager.py:73 Applicable driver not found; attempting to install with Selenium Manager (Beta)<br/> ------------------------------Captured stdout call------------------------------ <br/>admin@yourstore.com admin Pass
-admin@yourstore.com adm Fail
-adm@yourstore.com admin Fail
-adm@yourstore.com adm Fail
-<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_login_ddt.py:20 ********Test_002_DDT_Login**********
-INFO     root:test_login_ddt.py:21 ********test_login_ddt**********
-INFO     root:test_login_ddt.py:43 ******** Passed **********
-INFO     root:test_login_ddt.py:57 ******** Passed **********
-INFO     root:test_login_ddt.py:57 ******** Passed **********
-INFO     root:test_login_ddt.py:57 ******** Passed **********
-INFO     root:test_login_ddt.py:62 **** Login DDT test Passed *****<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_searchCustomer.py::Test_004_SearchCustomer::test_searchCustomerByName</td>
-          <td class="col-duration">21.54</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>*******Launching Firefox*********
-<br/> -------------------------------Captured log setup------------------------------- <br/>INFO     selenium.webdriver.common.selenium_manager:selenium_manager.py:73 Applicable driver not found; attempting to install with Selenium Manager (Beta)<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_searchCustomer.py:50 ********Test_004_SearchCustomer**********
-INFO     root:test_searchCustomer.py:51 ********test_searchCustomerByName**********
-INFO     root:test_searchCustomer.py:60 ******** Login Successful **********
-INFO     root:test_searchCustomer.py:62 ******** Starting Search Customer by Name Test **********
-INFO     root:test_searchCustomer.py:67 ******** Providing Customer Name for Search **********
-INFO     root:test_searchCustomer.py:75 ******** test_searchCustomerByName Completed **********<br/></div></td></tr></tbody></table></body></html>
+INFO     root:test_login.py:45 ********test_login Passed**********<br/></div></td></tr></tbody></table></body></html>
