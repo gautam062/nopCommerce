@@ -32,6 +32,7 @@ class Test_004_SearchCustomer:
 
         self.logger.info("******** Starting Search Customer by Email Test **********")
         self.acp = AddCustomerPage(self.driver)
+        ime.sleep(3)
         self.acp.clickOnCustomerMenu()
         self.acp.clickOnCustomerMenuItem()
         time.sleep(3)
